@@ -1,37 +1,27 @@
 <template>
   <div class="header-right">
     <div class="header-user-con">
-      <!-- 用户头像，根据需要自行修改图片路径 -->
-      <div class="user-avator">
-        <img src="../../assets/image/user.png" v-show="!isLogin" />
-        <img :src="userInfo.avatar" v-show="isLogin" />
-      </div>
-      <!-- 用户名下拉菜单 -->
-      <span class="el-link user-name" v-show="!isLogin">
+      <span v-show="!isLogin" class="el-link">
         <el-row @click.native="handleRouter(1)">登录</el-row>
         <el-row style="margin: 0 10px">/</el-row>
         <el-row @click.native="handleRouter(2)">注册</el-row>
       </span>
-      <el-dropdown
-        class="user-name"
-        trigger="click"
-        v-show="isLogin"
-        placement="bottom"
-      >
-        <span class="el-dropdown-link">
-          {{ userInfo.userName }}
-          <i class="el-icon-caret-bottom"></i>
-        </span>
+      <el-dropdown v-show="isLogin" trigger="click" placement="bottom">
+        <div class="user-avator">
+          <img src="../../assets/image/user.png" v-show="!isLogin" />
+          <img :src="userInfo.avatar" v-show="isLogin" />
+          <i class="el-icon-caret-bottom el-dropdown-link"></i>
+        </div>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item @click.native="handleRouter(3)"
-            >个人中心</el-dropdown-item
-          >
+          <el-dropdown-item @click.native="handleRouter(3)">
+            <i class="el-icon-user-solid"></i> 个人中心
+          </el-dropdown-item>
           <el-dropdown-item @click.native="handleRouter(4)">
-            修改密码</el-dropdown-item
-          >
+            <i class="el-icon-edit"></i> 修改密码
+          </el-dropdown-item>
           <el-dropdown-item divided @click.native="exitLogin()">
-            退出登录</el-dropdown-item
-          >
+            <i class="el-icon-unlock"></i> 退出登录
+          </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -110,34 +100,41 @@ export default {
     //在登录时，mounted被执行了，会自己更新userInfo
     this.checkLogin();
   },
-  beforeDestroy() {},
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header-right {
   float: right;
-  padding-right: 2%;
-}
-.header-user-con {
-  display: flex;
-  height: 60px;
-  align-items: center;
-}
-.user-avator img {
-  display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-.user-name {
-  width: 120px;
-  color: ivory;
-}
-.el-dropdown-link {
-  cursor: pointer;
-}
-.el-dropdown-menu__item {
-  text-align: center;
+  padding-right: 5%;
+
+  .header-user-con {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    .el-link {
+      color: ivory;
+    }
+
+    .dropdown-intro {
+      margin: 0;
+    }
+    .user-avator {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .el-dropdown-link {
+        cursor: pointer;
+        color: ivory;
+        margin-left: 8px;
+      }
+    }
+  }
 }
 </style>

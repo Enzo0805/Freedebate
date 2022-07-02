@@ -104,7 +104,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .logo {
   float: left;
   margin: 0;
