@@ -78,8 +78,8 @@
 </template>
 
 <script>
-import FreeDebate from "../../components/TimerComponents/FreeDebate.vue";
-import TimerAudio from "../../components/TimerComponents/TimerAudio.vue";
+import FreeDebate from "../../components/Timers/FreeDebate.vue";
+import TimerAudio from "../../components/Timers/TimerAudio.vue";
 import { mapState } from "vuex";
 import { debounce } from "@/common/utils";
 export default {

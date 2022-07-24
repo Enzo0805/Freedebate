@@ -1,10 +1,10 @@
 <template>
   <div class="header-right">
     <div class="header-user-con">
-      <span v-show="!isLogin" class="el-link">
-        <el-row @click.native="handleRouter(1)">登录</el-row>
-        <el-row style="margin: 0 10px">/</el-row>
-        <el-row @click.native="handleRouter(2)">注册</el-row>
+      <span v-show="!isLogin">
+        <span @click.native="handleRouter(1)">登录</span>
+        <span style="margin: 0 10px">/</span>
+        <span @click.native="handleRouter(2)">注册</span>
       </span>
       <el-dropdown v-show="isLogin" trigger="click" placement="bottom">
         <div class="user-avator">
@@ -107,15 +107,13 @@ export default {
 .header-right {
   float: right;
   padding-right: 5%;
+  color: ivory;
 
   .header-user-con {
     display: flex;
     height: 60px;
     align-items: center;
     justify-content: center;
-    .el-link {
-      color: ivory;
-    }
 
     .dropdown-intro {
       margin: 0;
@@ -131,8 +129,8 @@ export default {
       }
       .el-dropdown-link {
         cursor: pointer;
-        color: ivory;
         margin-left: 8px;
+        color: ivory;
       }
     }
   }

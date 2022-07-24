@@ -87,7 +87,6 @@ export default {
           password,
         })
         .then((response) => {
-          // console.log("登录的请求成功了");
           if (response.data.code === "200") {
             this.$notify({
               title: "成功",
@@ -96,7 +95,6 @@ export default {
               offset: 90,
               duration: 2000,
             });
-            // console.log(response.data.data);
             let userInfo = JSON.parse(response.data.data);
             localStorage.setItem("userInfo", response.data.data);
             this.$store.commit("checkLogin");
@@ -121,7 +119,6 @@ export default {
             offset: 90,
             duration: 2000,
           });
-          console.log(error.message);
         });
     },
   },

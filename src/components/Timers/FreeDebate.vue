@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import TimerAudio from "../../components/TimerComponents/TimerAudio.vue";
+import TimerAudio from "../../components/Timers/TimerAudio.vue";
 export default {
   name: "FreeDebate",
   components: { TimerAudio },

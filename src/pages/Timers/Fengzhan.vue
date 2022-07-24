@@ -77,8 +77,8 @@
 
 <script>
 import { thorttle, debounce } from "@/common/utils.js";
-import FreeDebate from "../../components/TimerComponents/FreeDebate.vue";
-import SingleTimer from "../../components/TimerComponents/SingleTimer.vue";
+import FreeDebate from "../../components/Timers/FreeDebate.vue";
+import SingleTimer from "../../components/Timers/SingleTimer.vue";
 import { mapState } from "vuex";
 export default {
   components: { SingleTimer, FreeDebate },

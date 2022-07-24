@@ -5,7 +5,7 @@
       <el-row style="width: 20%; margin: auto">
         <el-divider></el-divider>
       </el-row>
-      <el-row class="title" v-show="!isShow">你们打辩论的，都是🕊</el-row>
+      <el-row class="title" v-show="!isShow">你们打辩论的，都是 🕊</el-row>
       <el-tooltip
         class="item"
         effect="light"
@@ -121,7 +121,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .background {
   background: url(../assets/image/bgp.jpg);
   background-size: cover;
@@ -131,20 +131,21 @@ export default {
   align-items: center;
   justify-content: center;
   flex-flow: row wrap;
-}
-.draw-title {
-  color: ivory;
-  width: 100%;
-  margin-top: auto;
-}
-.title {
-  font-size: 2.5em;
-  margin: 55px 0 79px;
-  cursor: pointer;
-}
-.Roll {
-  font-size: 4em;
-  font-family: "Times New Roman", Times, serif;
-  margin: auto;
+
+  .draw-title {
+    color: ivory;
+    width: 100%;
+    margin-top: auto;
+  }
+  .title {
+    font-size: 2.5em;
+    margin: 55px 0 79px;
+    cursor: pointer;
+  }
+  .Roll {
+    font-size: 4em;
+    font-family: "Times New Roman", Times, serif;
+    margin: auto;
+  }
 }
 </style>
