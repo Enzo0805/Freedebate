@@ -151,9 +151,7 @@ export default {
       }
     }, 300),
     keyboardEvents(e) {
-      var keyNum = window.event ? e.keyCode : e.which; //获取被按下的键值
-      // console.log(e);
-      // console.log(keyNum);
+      let keyNum = window.event ? e.keyCode : e.which; //获取被按下的键值
       if (keyNum == 37) {
         this.goback();
       } else if (keyNum == 39) {

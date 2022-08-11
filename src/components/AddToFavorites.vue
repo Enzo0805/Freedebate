@@ -93,7 +93,6 @@ export default {
     handleAdd(row) {
       this.centerDialogVisible = true;
       this.addArugment = row;
-      console.log(this.addArugment);
     },
     handleSelectionChange(val) {
       this.multipleSelection = val;
@@ -126,7 +125,6 @@ export default {
             userId: JSON.parse(localStorage.getItem("userInfo")).id,
           })
           .then((response) => {
-            // console.log("新建收藏夹的请求成功了");
             if (response.data.code === "200") {
               this.$notify({
                 title: "成功",
